@@ -1,6 +1,6 @@
 class List < ActiveRecord::Base
   belongs_to :user
-  has_many :votes
+  has_many :votes, dependent: :destroy
 
   validates :image_ref, presence: true
   validates :source_ref, presence: true
