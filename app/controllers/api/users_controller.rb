@@ -29,7 +29,7 @@ class Api::UsersController < ApplicationController
 
   def destroy
     user = get_user
-    user.delete
+    user.destroy
     render json: user
   rescue ActiveRecord::RecordNotFound
     render json: { message: "Not found", status: 404 }, status: 404

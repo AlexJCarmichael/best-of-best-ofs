@@ -29,7 +29,7 @@ class Api::ItemsController < ApplicationController
 
   def destroy
     item = get_item
-    item.delete
+    item.destroy
     render json: item
   rescue ActiveRecord::RecordNotFound
     render json: { message: "Not found", status: 404 }, status: 404

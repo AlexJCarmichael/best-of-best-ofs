@@ -29,7 +29,7 @@ class Api::ListsController < ApplicationController
 
   def destroy
     list = get_list
-    list.delete
+    list.destroy
     render json: list
   rescue ActiveRecord::RecordNotFound
     render json: { message: "Not found", status: 404 }, status: 404

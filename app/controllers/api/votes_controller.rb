@@ -29,7 +29,7 @@ class Api::VotesController < ApplicationController
 
   def destroy
     votes = get_votes
-    votes.delete
+    votes.destroy
     render json: votes
   rescue ActiveRecord::RecordNotFound
     render json: { message: "Not found", status: 404 }, status: 404
