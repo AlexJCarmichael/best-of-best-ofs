@@ -4,7 +4,13 @@ class Vote < ActiveRecord::Base
 
   validates :user_id, presence: true
   validates :list_id, presence: true
-  validates :up_vote, presence: true
-  validates :down_vote, presence: true
-  validates :aggregate_vote, presence: true
+  validates :up_vote, numericality: {
+    only_integer: true
+  }
+  validates :down_vote, numericality: {
+    only_integer: true
+  }
+  validates :aggregate_vote, numericality: {
+    only_integer: true
+  }
 end
