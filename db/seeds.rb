@@ -12,4 +12,5 @@ user = User.create!(username: "George", password: "password")
   10.times do
     Vote.create!(user_id: user.id, list_id: list.id, up_vote: 1, down_vote: 0, aggregate_vote: 0 )
   end
+  Item.create!(list_id: list.id, one: "one", two: "two", three: "three", four: "four", five: "five", six: "six", seven: "seven", eight: "eight", nine: "nine", ten: "ten")
 end

@@ -11,10 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160408174958) do
+ActiveRecord::Schema.define(version: 20160408200903) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "items", force: :cascade do |t|
+    t.string   "one",        null: false
+    t.string   "two",        null: false
+    t.string   "three",      null: false
+    t.string   "four",       null: false
+    t.string   "five",       null: false
+    t.string   "six",        null: false
+    t.string   "seven",      null: false
+    t.string   "eight",      null: false
+    t.string   "nine",       null: false
+    t.string   "ten",        null: false
+    t.integer  "list_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "items", ["list_id"], name: "index_items_on_list_id", using: :btree
 
   create_table "lists", force: :cascade do |t|
     t.string   "image_ref"
@@ -48,6 +66,7 @@ ActiveRecord::Schema.define(version: 20160408174958) do
   add_index "votes", ["list_id"], name: "index_votes_on_list_id", using: :btree
   add_index "votes", ["user_id"], name: "index_votes_on_user_id", using: :btree
 
+  add_foreign_key "items", "lists"
   add_foreign_key "lists", "users"
   add_foreign_key "votes", "lists"
   add_foreign_key "votes", "users"
