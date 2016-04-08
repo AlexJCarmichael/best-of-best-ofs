@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  one: MyString
+  two: MyString
+  three: MyString
+  four: MyString
+  five: MyString
+  six: MyString
+  seven: MyString
+  eight: MyString
+  nine: MyString
+  ten: MyString
+  list_id: 
+
+two:
+  one: MyString
+  two: MyString
+  three: MyString
+  four: MyString
+  five: MyString
+  six: MyString
+  seven: MyString
+  eight: MyString
+  nine: MyString
+  ten: MyString
+  list_id: 
