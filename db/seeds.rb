@@ -109,6 +109,6 @@ user = User.create!(username: "George", password: "password")
   Item.create!(list_id: list_ten.id, one: "Einstein", two: "Paedophryne Amauensis", three: "Hippocampus Denise",
   four: "Brookesia Micra", five: "Leptotyphlops Carlae", six: "Octopus Wolfi", seven: "Speckled Padloper Tortoise",
   eight: "Kitti’s Hog-nosed Bat", nine: "Pygmy Marmoset", ten: "Munchkin Cat")
-  rand(1..15).times do
+  20.times do
     Vote.create!(list_id: list_ten.id, user_id: user.id, up_vote: 1, down_vote: 0)
   end
