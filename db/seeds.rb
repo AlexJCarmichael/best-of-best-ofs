@@ -72,26 +72,29 @@ user = User.create!(username: "George", password: "password")
     to Charli XCX’s psychotic death-by-selfie freak show, to Kendrick’s powerful levitating act, here are our 20 favorite videos of the year.",
     list_title: "The Best Music Videos of 2015", list_type: "Music", user_id: user.id)
   Item.create!(list_id: list_seven.id, one: "Kendrick Lamar: 'Alright'", two: "Separate Lives (Theme From White Nights)", three: "Say You, Say Me (Title Song From White Nights)",
-  four: 'Rihanna: “Bitch Better Have My Money”', five: "Never", six: "Election Day", seven: "Alive And Kicking", eight: "Sleeping Bag",
-  nine: 'Oneohtrix Point Never: “Sticky Drama”', ten: "We Built This City")
+  four: 'Rihanna: “Bitch Better Have My Money”', five: 'Tame Impala: “The Less I Know the Better”', six: 'Kanye West: "Only One" [ft. Paul McCartney]',
+  seven: 'Drake: “Hotline Bling”', eight: 'Run the Jewels: “Close Your Eyes”', nine: 'Oneohtrix Point Never: “Sticky Drama”', ten: 'Lana Del Rey: “High by the Beach”')
   rand(1..15).times do
     Vote.create!(list_id: list_seven.id, user_id: user.id, up_vote: 1, down_vote: 0)
   end
 
-  list_eight = List.create!(image_ref: "#", source_ref: "http://www.billboard.com/charts/hot-100/1985-12-14",
-    list_desc: "A list of the top selling albums and air play of the given time period. Week of 12/14/1985",
-    list_title: "The Billboard Top 100 for December 14, 1985.", list_type: "Music", user_id: user.id)
-  Item.create!(list_id: list_eight.id, one: "Broken Wings", two: "Vince Staples: 'Señorita'" , three: 'FKA twigs: “Glass & Patron”',
-  four: 'Rihanna: “Bitch Better Have My Money”', five: 'Tame Impala: “The Less I Know the Better”', six: 'Kanye West: "Only One" [ft. Paul McCartney]',
-  seven: 'Drake: “Hotline Bling”', eight: 'Run the Jewels: “Close Your Eyes”', nine: "I Miss You", ten: "We Built This City")
+  list_eight = List.create!(image_ref: "#", source_ref: "http://www.buzzfeed.com/annamenta/the-funniest-spongebob-squarepants-quotes#.gqPvoA3Wpz",
+    list_desc: "We asked the BuzzFeed Community to share their favorite quotes from SpongeBob SquarePants. Here are the hilarious responses",
+    list_title: "25 Of The Most Hilarious “SpongeBob” Quotes", list_type: "Misc", user_id: user.id)
+  Item.create!(list_id: list_eight.id, one: "When Patrick asked the question on every musician’s mind", two: "When SpongeBob coined a mantra of body positivity.",
+  three: "When Patrick was the world’s worst receptionist", four: "And when he was even worse at identifying animals",
+  five: "When the narrator was 6000% done and quit the show", six: "When they had a “panty raid” joke on a CHILDREN’S SHOW",
+  seven: "When the punch line of the entire episode was a reference to a 1922 German Expressionist horror film",
+  eight: "When Patrick told a story we can all sometimes relate to", nine: "Every time there was any sort of disaster and that one guy hurt his leg",
+  ten: "When SpongeBob revealed some interesting history about the pioneers of ocean life")
   rand(1..15).times do
     Vote.create!(list_id: list_eight.id, user_id: user.id, up_vote: 1, down_vote: 0)
   end
 
-  list_nine = List.create!(image_ref: "#", source_ref: "http://www.billboard.com/charts/hot-100/1985-12-14",
-    list_desc: "A list of the top selling albums and air play of the given time period. Week of 12/14/1985",
-    list_title: "The Billboard Top 100 for December 14, 1985.", list_type: "Music", user_id: user.id)
-  Item.create!(list_id: list_nine.id, one: "Broken Wings", two: "Separate Lives (Theme From White Nights)", three: "Say You, Say Me (Title Song From White Nights)",
+  list_nine = List.create!(image_ref: "#", source_ref: "http://www.computerworld.com/article/2473298/application-development/120001-GitHub-s-top-10-rock-star-projects.html",
+    list_desc: "Creators and contributors shed light on GitHub's most-popular projects -- and sing praise to the code-sharing site's impact on their community and code",
+    list_title: "GitHub's top 10 most popular projects" list_type: "Misc", user_id: user.id)
+  Item.create!(list_id: list_nine.id, one: "Bootstrap", two: "Node.js", three: "Say You, Say Me (Title Song From White Nights)",
   four: "Party All The Time", five: "Never", six: "Election Day", seven: "Alive And Kicking", eight: "Sleeping Bag",
   nine: "I Miss You", ten: "We Built This City")
   rand(1..15).times do

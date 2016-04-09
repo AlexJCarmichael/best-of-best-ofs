@@ -10,7 +10,7 @@ class Api::VotesController < ApplicationController
   end
 
   def create
-    votes = Votes.create!(votes_params)
+    votes = Vote.create!(votes_params)
     render json: votes
   rescue ActiveRecord::RecordInvalid
     render json: { message: "Bad request, need all paramaters", status: 400 }, status: 400
