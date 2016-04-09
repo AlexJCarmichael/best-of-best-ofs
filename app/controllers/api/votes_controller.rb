@@ -41,6 +41,6 @@ class Api::VotesController < ApplicationController
     end
 
     def votes_params
-      params.permit(:user_id, :list_id, :up_vote, :down_vote, :aggregate_vote)
+      params.permit(:user_id, :list_id, :up_vote, :down_vote)
     end
 end
