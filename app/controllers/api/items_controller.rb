@@ -41,6 +41,6 @@ class Api::ItemsController < ApplicationController
     end
 
     def item_params
-      params.permit(:item_title, :image_ref, :source_ref, :item_desc, :user_id)
+      params.require(:list).permit(:one, :two, :three, :four, :five, :six, :seven, :eight, :nine, :ten, :list_id)
     end
 end

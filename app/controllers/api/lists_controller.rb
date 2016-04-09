@@ -11,6 +11,10 @@ class Api::ListsController < ApplicationController
 
   def create
     list = List.create!(list_params)
+    items = Item.new(item_params)
+    items.list_id = list.id
+    items.save!
+    binding.pry
     render json: list
   rescue ActiveRecord::RecordInvalid
     render json: { message: "Bad request, need all paramaters", status: 400 }, status: 400
@@ -42,5 +46,10 @@ class Api::ListsController < ApplicationController
 
     def list_params
       params.permit(:list_title, :image_ref, :source_ref, :list_desc, :user_id)
+    end
+
+    def item_params
+      binding.pry
+      params.require(:item).permit(:one, :two, :three, :four, :five, :six, :seven, :eight, :nine, :ten)
     end
 end
