@@ -93,20 +93,22 @@ user = User.create!(username: "George", password: "password")
 
   list_nine = List.create!(image_ref: "#", source_ref: "http://www.computerworld.com/article/2473298/application-development/120001-GitHub-s-top-10-rock-star-projects.html",
     list_desc: "Creators and contributors shed light on GitHub's most-popular projects -- and sing praise to the code-sharing site's impact on their community and code",
-    list_title: "GitHub's top 10 most popular projects" list_type: "Misc", user_id: user.id)
-  Item.create!(list_id: list_nine.id, one: "Bootstrap", two: "Node.js", three: "Say You, Say Me (Title Song From White Nights)",
-  four: "Party All The Time", five: "Never", six: "Election Day", seven: "Alive And Kicking", eight: "Sleeping Bag",
-  nine: "I Miss You", ten: "We Built This City")
+    list_title: "GitHub's top 10 most popular projects", list_type: "Misc", user_id: user.id)
+  Item.create!(list_id: list_nine.id, one: "Bootstrap", two: "Node.js", three: "JQuery", four: "HTML5 Boilerplate", five: "Ruby on Rails",
+  six: "D3", seven: "Impress.js", eight: "Font Awesome", nine: "Backbone.js", ten: "Homebrew")
   rand(1..15).times do
     Vote.create!(list_id: list_nine.id, user_id: user.id, up_vote: 1, down_vote: 0)
   end
 
-  list_ten = List.create!(image_ref: "#", source_ref: "http://www.billboard.com/charts/hot-100/1985-12-14",
-    list_desc: "A list of the top selling albums and air play of the given time period. Week of 12/14/1985",
-    list_title: "The Billboard Top 100 for December 14, 1985.", list_type: "Music", user_id: user.id)
-  Item.create!(list_id: list_ten.id, one: "Broken Wings", two: "Separate Lives (Theme From White Nights)", three: "Say You, Say Me (Title Song From White Nights)",
-  four: "Party All The Time", five: "Never", six: "Election Day", seven: "Alive And Kicking", eight: "Sleeping Bag",
-  nine: "I Miss You", ten: "We Built This City")
+  list_ten = List.create!(image_ref: "#", source_ref: "http://listverse.com/2013/04/14/10-ridiculously-tiny-animals/",
+    list_desc: "Every respected scientist will be able to tell you that there is a direct relationship with how small something is,
+     and how adorable it is. Kittens, mini coopers, babies, hell even baby shoes are so adorable it will cause a person’s voice to jump several octaves up.
+    But grizzly bears, hummers, fat guys etc. just don’t have the same effect, impressive as they are. So here are ten animals so ridiculously tiny,
+    it’s hard to believe they were ever even spotted.",
+    list_title: "10 Ridiculously Tiny Animals", list_type: "Animals", user_id: user.id)
+  Item.create!(list_id: list_ten.id, one: "Einstein", two: "Paedophryne Amauensis", three: "Hippocampus Denise",
+  four: "Brookesia Micra", five: "Leptotyphlops Carlae", six: "Octopus Wolfi", seven: "Speckled Padloper Tortoise",
+  eight: "Kitti’s Hog-nosed Bat", nine: "Pygmy Marmoset", ten: "Munchkin Cat")
   rand(1..15).times do
     Vote.create!(list_id: list_ten.id, user_id: user.id, up_vote: 1, down_vote: 0)
   end
