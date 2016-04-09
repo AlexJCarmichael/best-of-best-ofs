@@ -7,5 +7,6 @@ class List < ActiveRecord::Base
   validates :source_ref, presence: true
   validates :list_desc, presence: true
   validates :list_title, presence: true
+  validates :list_type, presence: true
   validates :user_id, presence: true
 end

@@ -1,6 +1,11 @@
 class Api::ListsController < ApplicationController
   def index
-    render json: List.all
+    @list = List.select("lists.*, SUM(votes.up_vote - votes.down_vote) as aggregate_votes")
+                 .joins(:votes)
+                 .group("lists.id")
+                 .order("aggregate_votes DESC")
+                 .page(params[:page])
+    render json: @list
   end
 
   def show

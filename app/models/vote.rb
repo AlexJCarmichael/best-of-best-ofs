@@ -10,7 +10,4 @@ class Vote < ActiveRecord::Base
   validates :down_vote, numericality: {
     only_integer: true
   }
-  validates :aggregate_vote, numericality: {
-    only_integer: true
-  }
 end
