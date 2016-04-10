@@ -1,6 +1,6 @@
 class Api::ListsController < ApplicationController
   def index
-    @list = List.select("lists.*, SUM(votes.up_vote - votes.down_vote) as aggregate_votes, SUM(votes.up_votes) as up_votes")
+    @list = List.select("lists.*, SUM(votes.up_vote - votes.down_vote) as aggregate_votes")
                  .joins(:votes)
                  .group("lists.id")
                  .order("aggregate_votes DESC")
