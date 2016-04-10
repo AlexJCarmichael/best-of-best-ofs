@@ -29,7 +29,7 @@ user = User.create!(username: "George", password: "password")
 
   list_three = List.create!(image_ref: "#", source_ref: "http://www.animenewsnetwork.com/encyclopedia/ratings-anime.php?top50=best_bayesian",
     list_desc: "A list of the best rated, by users, anime. This is a bayesian estime which weights votes for those with less total votes overall.",
-    list_title: "Top 50 Best Rated Anime (bayesian estime) from Anime News Network.", list_type: "Misc", user_id: user.id)
+    list_title: "Top 50 Best Rated Anime (bayesian estime) from Anime News Network.", list_type: "Animation", user_id: user.id)
   Item.create!(list_id: list_three.id, one: "Steins;Gate (TV)", two: "	Fullmetal Alchemist: Brotherhood (TV)", three: "Clannad After Story (TV)",
   four: "Rurouni Kenshin: Trust & Betrayal (OAV)", five: "Mushishi: The Next Chapter (TV)", six: "Code Geass: Lelouch of the Rebellion R2 (TV)",
    seven: "	Spirited Away (movie)", eight: "Cowboy Bebop (TV)", nine: "(The) Disappearance of Haruhi Suzumiya (movie)", ten: "Princess Mononoke (movie)")
@@ -102,7 +102,7 @@ user = User.create!(username: "George", password: "password")
 
   list_ten = List.create!(image_ref: "#", source_ref: "http://listverse.com/2013/04/14/10-ridiculously-tiny-animals/",
     list_desc: "Every respected scientist will be able to tell you that there is a direct relationship with how small something is,
-     and how adorable it is. Kittens, mini coopers, babies, hell even baby shoes are so adorable it will cause a person’s voice to jump several octaves up.
+    and how adorable it is. Kittens, mini coopers, babies, hell even baby shoes are so adorable it will cause a person’s voice to jump several octaves up.
     But grizzly bears, hummers, fat guys etc. just don’t have the same effect, impressive as they are. So here are ten animals so ridiculously tiny,
     it’s hard to believe they were ever even spotted.",
     list_title: "10 Ridiculously Tiny Animals", list_type: "Animals", user_id: user.id)
@@ -111,4 +111,99 @@ user = User.create!(username: "George", password: "password")
   eight: "Kitti’s Hog-nosed Bat", nine: "Pygmy Marmoset", ten: "Munchkin Cat")
   20.times do
     Vote.create!(list_id: list_ten.id, user_id: user.id, up_vote: 1, down_vote: 0)
+  end
+
+  list_eleven = List.create!(image_ref: "#", source_ref: "http://www.businessinsider.com/best-david-letterman-top-10-lists-2014-4",
+    list_desc: "To compile the ranked list, we took into consideration top-viewed lists from YouTube and talked-about lists across the Internet. We also looked at prior anniversary lists from Letterman himself",
+    list_title: "The Top 10 David Letterman Top 10 Lists", list_type: "Misc", user_id: user.id)
+  Item.create!(list_id: list_eleven.id, one: "Top 10 George Bush Moments", two: "Top Ten List of Top 10 Favorite California Names",
+  three: "Barack Obama delivers his Top Ten Campaign Promises", four: 'Top Ten Things Never Before Said on "The Sopranos" as presented by the cast.',
+  five: "Top Ten President Obama Excuses", six: "Top Ten Ways The Show Has Changed Since 1993", seven: "Robert De Niro and Al Pacino's Top Ten Reasons I Like Being An Actor",
+  eight: "Ricky Gervais shares the Top Ten Stupid Things Americans Say To Brits", nine: "Top Ten Things I Have Learned Working For 'The Late Show'",
+  ten: "Top Ten Reasons I'm glad to be named Justin Bieber")
+  rand(1..15).times do
+    Vote.create!(list_id: list_eleven.id, user_id: user.id, up_vote: 1, down_vote: 0)
+  end
+
+  list_twelve = List.create!(image_ref: "#", source_ref: "http://blog.honeyfeed.fm/top-10-gundam-series-since-1979-best-recommendations/",
+    list_desc: "A blog post detailing the websites top ten seires in the Gundam franchise",list_title: "Top 10 Gundam Series Since 1979 [Best Recommendations]",
+    list_type: "Animation", user_id: user.id)
+  Item.create!(list_id: list_twelve.id, one: "Zeta Gundam", two: "Gundam 08th MS Team", three: "Mobile Suit Gundam", four: "Gundam Unicorn",
+  five: "New Mobile Report Gundam Wing", six: "After War Gundam X", seven: "Gundam 0080 War in the Pocket", eight: "Char’s Counterattack",
+  nine: "Turn A Gundam", ten: "Mobile Fighter G Gundam")
+  rand(1..15).times do
+    Vote.create!(list_id: list_twelve.id, user_id: user.id, up_vote: 1, down_vote: 0)
+  end
+
+  list_thirteen = List.create!(image_ref: "#", source_ref: "http://www.buzzfeed.com/mjs538/the-40-most-important-corgis-of-2014#.diE1EgQ3pW",
+    list_desc: "The most important end-of-the-year list is back.", list_title: "The 40 Most Important Corgis Of 2014", list_type: "Animals", user_id: user.id)
+  Item.create!(list_id: list_thirteen.id, one: "Corgnelius and Stumphrey", two: "The Corgi That Fell in the Mud", three: "The Corgi That Was Used for Scale",
+  four: "Penny", five: "The Corgi That Came Out of a Package of Cookies", six: "The Corgi and Cat That Became Best Friends", seven: "Otis",
+  eight: "Chubby", nine: "Bentley", ten: "The Corgi That Fell Asleep in Class")
+  rand(1..15).times do
+    Vote.create!(list_id: list_thirteen.id, user_id: user.id, up_vote: 1, down_vote: 0)
+  end
+
+  list_fourteen = List.create!(image_ref: "#", source_ref: "http://www.ranker.com/crowdranked-list/my-favorite-cartoons-of-all-time",
+    list_desc: "A site that ranks items based on user votes.", list_title: "The Best Cartoons of All Time", list_type: "Animation", user_id: user.id)
+  Item.create!(list_id: list_fourteen.id, one: "Looney Toons", two: "The Simpsons", three: "Tom and Jerry", four: "The Flinstones",
+  five: "Scooby-Doo, Where are you!", six: "SpongeBob SquarePants", seven: "Batman: The Animated Series", eight: "Avatar: The Last Airbender",
+  nine: "Dexter's Laboratory", ten: "Futurama")
+  rand(1..15).times do
+    Vote.create!(list_id: list_fourteen.id, user_id: user.id, up_vote: 1, down_vote: 0)
+  end
+
+  list_fifteen = List.create!(image_ref: "#", source_ref: "http://www.thetoptens.com/best-jelly-belly-flavors/",
+    list_desc: "A site that accepts user votes and coments to rank items",
+    list_title: "Best Jelly Belly Flavors", list_type: "Food", user_id: user.id)
+  Item.create!(list_id: list_fifteen.id, one: "Green Apple", two: "Toasted Marshmallow", three: "Buttered Popcorn", four: "Tutti Frutti",
+  five: "Juicy Pear", six: "Very Cherry", seven: "Watermelon", eight: "Coconut", nine: "Apple Pie", ten: "Crushed Pineapple")
+  rand(1..15).times do
+    Vote.create!(list_id: list_fifteen.id, user_id: user.id, up_vote: 1, down_vote: 0)
+  end
+
+  list_sixteen = List.create!(image_ref: "#", source_ref: "http://screenrant.com/10-best-action-movies-ever-list/",
+    list_desc: "A list of the top ten action movies by Chris Agar of Screenrant. Ordered by release year.", list_title: "10 Best Action Movies Ever Made", list_type: "Movies", user_id: user.id)
+  Item.create!(list_id: list_sixteen.id, two: "FIRST BLOOD (1982)", three: "LETHAL WEAPON (1987)", four: "DIE HARD (1988)", five: "TERMINATOR 2: JUDGMENT DAY (1991)",
+  six: "POINT BREAK (1991)", seven: "BAD BOYS (1995)", eight: "THE MATRIX (1999)", nine: "THE BOURNE ULTIMATUM (2007)",
+  ten: "THE RAID: REDEMPTION (2012)", one: "RAIDERS OF THE LOST ARK (1981)")
+  rand(1..15).times do
+    Vote.create!(list_id: list_sixteen.id, user_id: user.id, up_vote: 1, down_vote: 0)
+  end
+
+  list_seventeen = List.create!(image_ref: "#", source_ref: "http://splitsider.com/2015/03/the-20-best-comedy-movies-of-all-time/",
+    list_desc: "A list of the 20 best Comedies by John Wenzel of Splitsider",
+    list_title: "The 20 Best Comedy Movies of All Time", list_type: "Movies", user_id: user.id)
+  Item.create!(list_id: list_seventeen.id, one: "Blazing Saddles (1974)", two: "Dr. Strangelove (Or How I Learned to Stop Worrying and Love the Bomb) (1964)",
+  three: "Some Like It Hot (1959)", four: "Monty Python and the Holy Grail (1975)", five: "Duck Soup (1933)",
+  six: "Annie Hall (1977)", seven: "Caddyshack (1980)", eight: "This Is Spinal Tap (1984)", nine: "Raising Arizona (1987)", ten: "The Jerk (1979)")
+  rand(1..15).times do
+    Vote.create!(list_id: list_seventeen.id, user_id: user.id, up_vote: 1, down_vote: 0)
+  end
+
+  list_eighteen = List.create!(image_ref: "#", source_ref: "http://www.computerworld.com/article/2473298/application-development/120001-GitHub-s-top-10-rock-star-projects.html",
+    list_desc: "A blog post detailing the websites top ten anime series by the studio Gainax",
+    list_title: "Top 10 Anime Made by Gainax [Best Recommendations]", list_type: "Anime", user_id: user.id)
+  Item.create!(list_id: list_eighteen.id, one: "Neon Genesis Evangelion (Shin Seiki Evangelion)", two: "Tengen Toppa Gurren Lagann",
+  three: "Gunbuster (Toppu wo Nerae! Gunbuster)", four: "FLCL (Fooly Cooly)", five: "Royal Space Force: The Wings of Honnêamise",
+  six: "Panty and Stocking with Garterbelt", seven: "Nadia: Secret of Blue Water (Fushigi no Umi no Nadia)", eight: "Otaku no Video",
+  nine: "Magical Shopping Arcade Abenobashi (Abenobashi Maho Shoutengai)", ten: "Medaka Box")
+  rand(1..15).times do
+    Vote.create!(list_id: list_eighteen.id, user_id: user.id, up_vote: 1, down_vote: 0)
+  end
+
+  list_nineteen = List.create!(image_ref: "#", source_ref: "https://en.wikipedia.org/wiki/List_of_best-selling_game_consoles#All_game_consoles",
+    list_desc: "A list of Video game consoles ranked by units sold.", list_title: "All Game Consoles", list_type: "Video Games", user_id: user.id)
+  Item.create!(list_id: list_nineteen.id, one: "Playstation 2", two: "Nintendo DS", three: "Game Boy/Game Boy Color", four: "Playstation", five: "Wii",
+  six: "Xbox360", seven: "Playstation 3", eight: "Playstation Portable", nine: "Game Boy Advance", ten: "Nintendo Entertainment System")
+  rand(1..15).times do
+    Vote.create!(list_id: list_nineteen.id, user_id: user.id, up_vote: 1, down_vote: 0)
+  end
+
+  list_twenty = List.create!(image_ref: "#", source_ref: "https://www.vg247.com/2014/08/29/50-best-rpgs-ever/",
+    list_desc: "A list of the 50 best RPGs by VG24/7", list_title: "The 50 best RPGs EVER", list_type: "Video Games", user_id: user.id)
+  Item.create!(list_id: list_twenty.id, one: "The Elder Scrolls V: Skyrim", two: "Mass Effect", three: "Baldur’s Gate", four: "World of Warcraft",
+  five: "Fallout (Interplay)", six: "Diablo 1 & 2", seven: "Dark Souls", eight: "Final Fantasy", nine: "Zelda 2: The Adventure of Link", ten: "The Witcher")
+  rand(1..15).times do
+    Vote.create!(list_id: list_twenty.id, user_id: user.id, up_vote: 1, down_vote: 0)
   end

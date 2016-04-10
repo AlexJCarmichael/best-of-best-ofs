@@ -49,11 +49,10 @@ class Api::ListsController < ApplicationController
     end
 
     def list_params
-      params.permit(:list_title, :image_ref, :source_ref, :list_desc, :user_id)
+      params.permit(:list_title, :image_ref, :source_ref, :list_desc, :user_id, :list_type)
     end
 
     def item_params
-      binding.pry
       params.require(:item).permit(:one, :two, :three, :four, :five, :six, :seven, :eight, :nine, :ten)
     end
 end
