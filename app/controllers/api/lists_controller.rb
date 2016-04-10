@@ -5,7 +5,7 @@ class Api::ListsController < ApplicationController
                  .group("lists.id")
                  .order("aggregate_votes DESC")
                  .page(params[:page])
-    render json: @list
+    render json: @list.to_json(include: :items)
   end
 
   def show
