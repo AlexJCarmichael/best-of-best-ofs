@@ -17,4 +17,9 @@ class List < ActiveRecord::Base
   def down_votes
     self.votes.where('down_vote > 0').count
   end
+
+  def create_owner_vote
+    Vote.create!(link_id: self.id, user_id: self.user_id, positive: 1, negative: 0)
+  end
+
 end
