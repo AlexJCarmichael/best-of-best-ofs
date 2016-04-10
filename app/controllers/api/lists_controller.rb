@@ -1,6 +1,6 @@
 class Api::ListsController < ApplicationController
   def index
-    @list = List.select("lists.*, SUM(votes.up_vote - votes.down_vote) as aggregate_votes")
+    @list = List.select("lists.*, SUM(votes.up_vote - votes.down_vote) as aggregate_votes, SUM(votes.up_votes) as up_votes")
                  .joins(:votes)
                  .group("lists.id")
                  .order("aggregate_votes DESC")
@@ -9,7 +9,7 @@ class Api::ListsController < ApplicationController
   end
 
   def show
-    render json: get_list.to_json(include: :items, include: :up_votes)
+    render json: get_list.to_json(include: :items)
   rescue ActiveRecord::RecordNotFound
     render json: { message: "Not found", status: 404 }, status: 404
   end
@@ -19,7 +19,6 @@ class Api::ListsController < ApplicationController
     items = Item.new(item_params)
     items.list_id = list.id
     items.save!
-    binding.pry
     render json: list
   rescue ActiveRecord::RecordInvalid
     render json: { message: "Bad request, need all paramaters", status: 400 }, status: 400
