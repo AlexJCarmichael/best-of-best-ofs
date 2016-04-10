@@ -9,7 +9,7 @@ class Api::ListsController < ApplicationController
   end
 
   def show
-    render json: get_list.to_json(include: :items)
+    render json: get_list.to_json(include: :items, include: :up_votes)
   rescue ActiveRecord::RecordNotFound
     render json: { message: "Not found", status: 404 }, status: 404
   end

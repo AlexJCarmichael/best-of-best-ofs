@@ -9,4 +9,12 @@ class List < ActiveRecord::Base
   validates :list_title, presence: true
   validates :list_type, presence: true
   validates :user_id, presence: true
+
+  def up_votes
+    self.votes.where('up_vote > 0').count
+  end
+
+  def down_votes
+    self.votes.where('down_vote > 0').count
+  end
 end
