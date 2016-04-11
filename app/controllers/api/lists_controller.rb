@@ -1,11 +1,23 @@
 class Api::ListsController < ApplicationController
   def index
-    @list = List.select("lists.*, SUM(votes.up_vote - votes.down_vote) as aggregate_votes, SUM(votes.up_vote) as up_votes, SUM(votes.down_vote) as down_votes")
-                 .joins(:votes)
-                 .group("lists.id")
-                 .order("aggregate_votes DESC")
-                 .page(params[:page])
-    render json: @list.to_json(include: :items)
+    if specific == least
+      @list = List.select("lists.*, SUM(votes.up_vote - votes.down_vote) as aggregate_votes, SUM(votes.up_vote) as up_votes, SUM(votes.down_vote) as down_votes")
+                   .joins(:votes)
+                   .group("lists.id")
+                   .order("aggregate_votes")
+                   .page(params[:page])
+      render json: @list.to_json(include: :items)
+    elsif specefic == newest
+      @list = List.order("created_at DESC").page(params[:page])
+      render json: @list.to_json(include: :items)
+    else
+      @list = List.select("lists.*, SUM(votes.up_vote - votes.down_vote) as aggregate_votes, SUM(votes.up_vote) as up_votes, SUM(votes.down_vote) as down_votes")
+                   .joins(:votes)
+                   .group("lists.id")
+                   .order("aggregate_votes DESC")
+                   .page(params[:page])
+      render json: @list.to_json(include: :items)
+    end
   end
 
   def show

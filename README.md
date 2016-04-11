@@ -1,3 +1,9 @@
+## Trello
+`https://trello.com/b/4GWyWSjn/best-of-best-of-lists`
+
+##Heroku
+`https://wolfpack-lists.herokuapp.com/`
+
 #Using the API for the Best of's
 ---
 
