@@ -1,6 +1,6 @@
 class Api::ListsController < ApplicationController
   def index
-    if params[:specific] == "least"
+    if params[:specific]
       @list = List.select("lists.*, SUM(votes.up_vote - votes.down_vote) as aggregate_votes, SUM(votes.up_vote) as up_votes, SUM(votes.down_vote) as down_votes")
                    .joins(:votes)
                    .group("lists.id")
