@@ -78,4 +78,26 @@ item[ten]
 #####Lists
 
 list_title : The title of the list being submitted.
+list_desc : A brief user submited summary of the list
+image_ref : A url of the image the user wants to represent the list
+source_ref : The source url of the list
+list_type : What is the list ranking
+user_id : The id of the user that submited the list
 
+##Post requests
+
+api/lists
+api/votes
+api/users
+api/items
+
+In order to use post to create a new object of each type all of the above params are required
+
+##Delete
+
+api/list/:id
+api/votes/:id
+api/users/:id
+api/items/:id
+
+Deletes the object at the given :id. Any votes or items will be deleted if the list associated with them is deleted.
