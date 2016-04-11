@@ -10,6 +10,8 @@ class List < ActiveRecord::Base
   validates :list_type, presence: true
   validates :user_id, presence: true
 
+  after_create :create_owner_vote
+
   def up_votes
     self.votes.where('up_vote > 0').count
   end
