@@ -21,7 +21,7 @@ class List < ActiveRecord::Base
   end
 
   def create_owner_vote
-    Vote.create!(list_id: self.id, user_id: self.user_id, positive: 1, negative: 0)
+    Vote.create!(list_id: self.id, user_id: self.user_id, up_vote: 1, down_vote: 0)
   end
 
 end
