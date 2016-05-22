@@ -1,8 +1,8 @@
 ## Trello
-`https://trello.com/b/4GWyWSjn/best-of-best-of-lists`
+[Best of Trello Board](https://trello.com/b/4GWyWSjn/best-of-best-of-lists)
 
 ##Heroku
-`https://wolfpack-lists.herokuapp.com/`
+[Wolfpack Api Heroku App](https://wolfpack-lists.herokuapp.com/)
 
 #Using the API for the Best of's
 ---
@@ -16,7 +16,7 @@
 Lists can be replaced with votes, users, and items. Items, users, or votes show all, not the top 5.
 
 ###Sample
-Api call : http://localhost:3000/api/lists/1
+Api call : https://wolfpack-lists.herokuapp.com/api/lists/1
 
 ```{
   "id": 1,
