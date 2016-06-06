@@ -133,7 +133,7 @@ User.create!(username: "Michael", password: "password")
   five: "Top Ten President Obama Excuses", six: "Top Ten Ways The Show Has Changed Since 1993", seven: "Robert De Niro and Al Pacino's Top Ten Reasons I Like Being An Actor",
   eight: "Ricky Gervais shares the Top Ten Stupid Things Americans Say To Brits", nine: "Top Ten Things I Have Learned Working For 'The Late Show'",
   ten: "Top Ten Reasons I'm glad to be named Justin Bieber")
-  8.times do |x|
+  9.times do |x|
     Vote.create!(list_id: list_eleven.id, user_id: x+1, up_vote: 1, down_vote: 0)
   end
 
@@ -201,7 +201,7 @@ User.create!(username: "Michael", password: "password")
   three: "Gunbuster (Toppu wo Nerae! Gunbuster)", four: "FLCL (Fooly Cooly)", five: "Royal Space Force: The Wings of Honnêamise",
   six: "Panty and Stocking with Garterbelt", seven: "Nadia: Secret of Blue Water (Fushigi no Umi no Nadia)", eight: "Otaku no Video",
   nine: "Magical Shopping Arcade Abenobashi (Abenobashi Maho Shoutengai)", ten: "Medaka Box")
-  rand(1..8).times do |x|
+  9.times do |x|
     Vote.create!(list_id: list_eighteen.id, user_id: x+2, up_vote: 1, down_vote: 0)
   end
 
